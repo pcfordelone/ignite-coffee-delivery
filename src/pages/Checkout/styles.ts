@@ -12,6 +12,32 @@ export const CheckoutContainer = styled.main`
   }
 `
 
+export const CheckoutInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    span {
+      color: ${(props) => props.theme['yellow-700']};
+    }
+
+    h2 {
+      margin-top: 0.2rem;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+      color: ${(props) => props.theme['gray-700']};
+    }
+    p {
+      color: ${(props) => props.theme['gray-600']};
+    }
+  }
+`
+
 export const OrderInfoContainer = styled.div`
   flex: 1;
   margin-left: 2rem;
@@ -26,88 +52,6 @@ export const OrderContainer = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  div.order-item {
-    flex: 1;
-    display: flex;
-    gap: 1rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid ${(props) => props.theme['gray-500']};
-
-    &:first-child {
-      padding: 0 0 2rem 0;
-    }
-
-    img {
-      width: 4rem;
-      height: 4rem;
-    }
-
-    div {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-
-      div.formgroup {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
-
-        input {
-          width: 4.5rem;
-          padding: 0.45rem;
-          border: none;
-          border-radius: 8px;
-          background: ${(props) => props.theme['gray-400']};
-          text-align: center;
-          font-size: 1rem;
-
-          &[type='number']::-webkit-inner-spin-button,
-          &[type='number']::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
-        }
-
-        &::before {
-          position: absolute;
-          left: 0.5rem;
-          content: '-';
-          color: ${(props) => props.theme['purple-300']};
-          font-size: 1.9rem;
-          cursor: pointer;
-        }
-        &::after {
-          position: absolute;
-          left: 3.2rem;
-          content: '+';
-          color: ${(props) => props.theme['purple-300']};
-          font-size: 1.3rem;
-          cursor: pointer;
-        }
-      }
-
-      button {
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-        padding: 0.6rem 0.7rem;
-
-        border: none;
-        border-radius: 8px;
-        background: ${(props) => props.theme['gray-400']};
-        color: ${(props) => props.theme['gray-700']};
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 0.8rem;
-      }
-    }
-
-    strong {
-    }
-  }
 
   div.order-totals {
     margin-top: 2rem;
@@ -135,6 +79,13 @@ export const OrderContainer = styled.div`
 
       text-transform: uppercase;
       font-weight: bold;
+      cursor: pointer;
+
+      transition: filter 0.3s;
+
+      &:hover {
+        filter: brightness(0.8);
+      }
     }
   }
 `

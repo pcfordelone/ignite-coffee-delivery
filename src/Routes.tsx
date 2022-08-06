@@ -12,7 +12,7 @@ export const AppRoutes: React.FC = () => {
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/sucesso" element={<SuccessPage />} />
+        <Route path="/sucesso/:id" element={<SuccessPage />} />
       </Route>
     </Routes>
   )

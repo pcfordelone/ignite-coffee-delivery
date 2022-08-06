@@ -64,7 +64,12 @@ const advantageIconVariants = {
   purple: '#8047F8',
 }
 
-export const AdvantageIcon = styled.div<AdvantageIconProps>`
+export const AdvantageIcon = styled.span<AdvantageIconProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
   padding: 0.5rem;
   color: #ffffff;
   border-radius: 50%;

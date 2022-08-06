@@ -25,6 +25,7 @@ export const SuccessContainer = styled.main`
       flex: 1;
       display: flex;
       flex-direction: column;
+      justify-content: space-around;
       gap: 1.5rem;
       padding: 2rem;
       margin-right: 5.5rem;

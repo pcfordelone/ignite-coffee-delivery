@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 import { Icon, SuccessContainer } from './styles'
 import SuccessImg from '../../assets/checkout-image.svg'
-import { CurrencyDollar, MapPin, ShoppingCart, Timer } from 'phosphor-react'
+import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
+import { Order } from '../Checkout/interfaces'
+import { useCart } from '../../contexts/CartContext/useCart'
 
 export const SuccessPage: React.FC = () => {
+  const [order, setOrder] = useState<Order>()
+  const { id } = useParams()
+
+  const { resetCart } = useCart()
+
+  useEffect(() => {
+    const localstorageOrder = localStorage.getItem(
+      `@coffee-delivery-1.0.0:order-${id}`,
+    )
+
+    if (localstorageOrder) {
+      setOrder(JSON.parse(localstorageOrder))
+      resetCart()
+    }
+  }, [])
+
   return (
     <SuccessContainer>
       <h1>Uhu! Pedido confirmado</h1>
@@ -19,10 +38,12 @@ export const SuccessPage: React.FC = () => {
             <p>
               Entrega em{' '}
               <strong>
-                Rua João Daniel Martinelli, 102
+                {`${order?.shippingData.formAddress}, ${order?.shippingData.formNumber}`}
+                {order?.shippingData.formComplement &&
+                  `, ${order?.shippingData.formComplement}`}
                 <br />
+                {`${order?.shippingData.formDistrict} - ${order?.shippingData.formCity}/${order?.shippingData.formUf}`}
               </strong>
-              Farrapos Porto Alegre, RS
             </p>
           </div>
 
@@ -44,7 +65,11 @@ export const SuccessPage: React.FC = () => {
             <p>
               Pagamento na entrega
               <br />
-              <strong>Cartão de Crédito</strong>
+              <strong>
+                {order?.paymentMethod === 'credit' && 'Cartão de Crédito'}
+                {order?.paymentMethod === 'debit' && 'Cartão de Débito'}
+                {order?.paymentMethod === 'cash' && 'Dinheiro'}
+              </strong>
             </p>
           </div>
         </div>
