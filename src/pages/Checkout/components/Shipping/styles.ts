@@ -64,5 +64,31 @@ export const ShippingContainer = styled.div`
         }
       }
     }
+
+    @media only screen and (max-width: 900px) {
+      margin: 1rem;
+
+      form {
+        div.form-group {
+          flex-direction: column;
+          gap: 1rem;
+          position: relative;
+
+          input {
+            padding: 1rem;
+          }
+
+          span {
+            right: 1rem;
+            top: 5.5rem;
+            font-size: 0.8rem;
+          }
+
+          input.form-uf {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 `

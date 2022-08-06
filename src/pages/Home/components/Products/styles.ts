@@ -15,4 +15,9 @@ export const ProductsContainer = styled.div`
     flex-wrap: wrap;
     gap: 2rem;
   }
+
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    align-items: center;
+  }
 `

@@ -50,4 +50,9 @@ export const HeaderContainer = styled.header`
       }
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    padding: 1rem;
+  }
 `

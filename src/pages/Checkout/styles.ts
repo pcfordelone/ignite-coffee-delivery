@@ -10,6 +10,18 @@ export const CheckoutContainer = styled.main`
   h1 {
     font-size: 1.5rem;
   }
+
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
 `
 
 export const CheckoutInfoContainer = styled.div`
@@ -36,11 +48,21 @@ export const CheckoutInfoContainer = styled.div`
       color: ${(props) => props.theme['gray-600']};
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    margin: 1rem;
+  }
 `
 
 export const OrderInfoContainer = styled.div`
   flex: 1;
   margin-left: 2rem;
+
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    margin: 1rem;
+  }
 `
 
 export const OrderContainer = styled.div`
@@ -87,5 +109,13 @@ export const OrderContainer = styled.div`
         filter: brightness(0.8);
       }
     }
+  }
+  @media only screen and (max-width: 900px) {
+    margin: 1rem;
+
+    padding: 0;
+    align-items: center;
+
+    padding-bottom: 2rem;
   }
 `

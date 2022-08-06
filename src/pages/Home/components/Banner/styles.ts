@@ -3,7 +3,11 @@ import styled from 'styled-components'
 export const BannerContainer = styled.div`
   width: 70rem;
   margin: 0 auto;
-  height: 100%;
+
+  height: 34rem;
+  background: url('/src/assets/home-banner-background.png') no-repeat;
+  background-size: cover;
+  background-position: center;
 
   display: flex;
   align-items: center;
@@ -47,6 +51,44 @@ export const BannerContainer = styled.div`
         font-size: 1rem;
         color: ${(props) => props.theme['gray-700']};
       }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-size: contain;
+    padding: 2rem;
+
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+
+    img {
+      max-width: 90%;
+    }
+
+    div.bannerDescription {
+      padding: 0;
+
+      h1 {
+        font-size: 2rem;
+        line-height: 2rem;
+      }
+
+      span {
+        font-size: 1.5rem;
+        line-height: 1.625rem;
+      }
+    }
+
+    div.advantages {
+      display: flex;
+      align-items: center;
+
+      margin-top: 0.5rem;
     }
   }
 `

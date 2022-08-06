@@ -19,6 +19,14 @@ export const PaymentMethodsContainer = styled.div`
       background: ${(props) => props.theme['purple-100']};
     }
   }
+  @media only screen and (max-width: 900px) {
+    margin: 1rem;
+
+    div.payment-methods {
+      flex: 1;
+      flex-direction: column;
+    }
+  }
 `
 
 interface ButtonProps {
@@ -52,5 +60,12 @@ export const Button = styled.button<ButtonProps>`
   &:focus {
     border: 1px solid ${(props) => props.theme['purple-300']};
     box-shadow: none;
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    padding: 1rem;
+
+    font-size: 1rem;
   }
 `

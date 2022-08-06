@@ -44,6 +44,28 @@ export const SuccessContainer = styled.main`
       }
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 1rem;
+
+    div.content {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+
+      img {
+        max-width: 90%;
+      }
+
+      div.order-info {
+        width: 100%;
+        padding: 2rem;
+        margin: 0;
+      }
+    }
+  }
 `
 export type IconVariants = 'orange' | 'gray' | 'yellow' | 'purple'
 

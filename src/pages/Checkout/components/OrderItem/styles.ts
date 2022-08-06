@@ -99,4 +99,24 @@ export const OrderItemContainer = styled.div`
       font-weight: 400;
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    margin: 1rem;
+
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1rem 0;
+    text-align: center;
+
+    div {
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+    }
+
+    strong {
+      font-size: 1.5rem;
+    }
+  }
 `

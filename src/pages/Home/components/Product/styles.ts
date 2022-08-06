@@ -7,6 +7,13 @@ export const ProductItem = styled.div`
   align-items: center;
   width: 22%;
 
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
   background: ${(props) => props.theme['gray-200']};
   border-radius: 8px;
   border-top-right-radius: 40px;
@@ -49,6 +56,11 @@ export const ProductItem = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
     p {
       font-size: 1.2rem;
