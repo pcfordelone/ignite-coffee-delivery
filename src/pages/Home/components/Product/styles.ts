@@ -128,7 +128,7 @@ export const ProductItem = styled.div`
         border: none;
         border-radius: 4px;
         background: ${(props) => props.theme['purple-500']};
-        color: #ffffff;
+        color: ${(props) => props.theme.white};
         cursor: pointer;
 
         transition: filter 0.3s;

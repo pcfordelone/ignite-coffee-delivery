@@ -6,8 +6,7 @@ export const BannerContainer = styled.div`
 
   height: 34rem;
   background: url('/src/assets/home-banner-background.png') no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
 
   display: flex;
   align-items: center;

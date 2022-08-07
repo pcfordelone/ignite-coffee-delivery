@@ -7,9 +7,7 @@ export interface CartProduct {
 }
 
 export interface CartContextProps {
-  // shippingData: ShippingData | undefined
   cartProducts: CartProduct[]
-  // paymentMethod?: PaymentMethod
   addProduct: (product: CartProduct) => void
   rmProduct: (id: string) => void
   updateProduct: (id: string, amount: number) => void

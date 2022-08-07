@@ -2,15 +2,18 @@ import React, { MouseEvent, useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { HeaderContainer } from './styles'
 
-import LogoImg from '../../assets/logo.png'
-import { MapPin, ShoppingCart } from 'phosphor-react'
+import LogoImg from '../../assets/logo-coffee-delivery.png'
+import { MapPin, Moon, ShoppingCart, Sun } from 'phosphor-react'
 import { useCart } from '../../contexts/CartContext/useCart'
 import { notify } from '../../utils/notification'
+import { useTheme } from '../../contexts/ThemeContext/useTheme'
 
 export const Header: React.FC = () => {
   const [cartAmountItems, setCartAmountItems] = useState<number>(0)
   const { cartProducts } = useCart()
   const navigate = useNavigate()
+
+  const { toggleTheme, actualTheme } = useTheme()
 
   const handleCartClick = (
     e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
@@ -41,8 +44,11 @@ export const Header: React.FC = () => {
         <img src={LogoImg} alt="" />
       </Link>
       <nav>
+        <button onClick={toggleTheme}>
+          {actualTheme === 'dark' ? <Moon size={22} /> : <Sun size={22} />}
+        </button>
         <span>
-          <MapPin size={22} color="#4B2995" weight="fill" />
+          <MapPin size={22} weight="fill" />
           São Paulo, SP
         </span>
         <NavLink className="cart" to="/checkout" onClick={handleCartClick}>

@@ -61,8 +61,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     <CartContext.Provider
       value={{
         cartProducts,
-        // paymentMethod,
-        // shippingData,
         addProduct,
         rmProduct,
         updateProduct,
